@@ -9,4 +9,5 @@ Git git branch -M main // troca de branch para a main
 git push origin main // adiciona as alterações dos arquivos na branch "main"
 .gitignore é arquivo de texto que menciona quais arquivos ou pastas não devem ser reconhecidos pelo git e não devem ser enviados para o github
 Git pull // atualiza o projeto com os arquivos alterados por membros da equipe do projeto
+git reset HEAD arquivo1 arquivo2 limpar arquivo1 e 2 da pilha de commit
 

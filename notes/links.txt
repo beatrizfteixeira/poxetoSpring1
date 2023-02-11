@@ -1,0 +1,1 @@
+Criar base para o projeto SPB com Maven: https://start.spring.io/
