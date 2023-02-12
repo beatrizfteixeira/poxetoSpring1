@@ -2,3 +2,6 @@ Spring Boot
 Spring Framework
 Spring Data
 Spring Security
+
+
+biblioteca project Lombok p/ evitar repetir código de getters e setters 
