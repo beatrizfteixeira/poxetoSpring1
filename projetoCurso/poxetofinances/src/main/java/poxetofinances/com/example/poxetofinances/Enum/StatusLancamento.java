@@ -1,4 +1,4 @@
-package poxetofinances.com.example.poxetofinances.modelEntity;
+package poxetofinances.com.example.poxetofinances.Enum;
 
 public enum StatusLancamento {
 	
