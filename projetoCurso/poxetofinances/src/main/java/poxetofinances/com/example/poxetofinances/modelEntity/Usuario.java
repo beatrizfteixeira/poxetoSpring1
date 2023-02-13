@@ -15,7 +15,7 @@ import lombok.Builder;
 import lombok.EqualsAndHashCode;
 
 @Entity
-@Table (name = "usuario", schema = "finances") 
+@Table (name = "usuario", schema = "financas") 
 // @Data
 @Getter
 @Setter

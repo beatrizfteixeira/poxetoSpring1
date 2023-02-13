@@ -1,11 +1,11 @@
-package Service.impl;
+package poxetofinances.com.example.poxetofinances.service.impl;
 
 import org.springframework.stereotype.Service;
 
-import Service.UsuarioService;
-import exception.RegraNegocioException;
-import model.Repository.UsuarioRepository;
+import poxetofinances.com.example.poxetofinances.exception.RegraNegocioException;
+import poxetofinances.com.example.poxetofinances.model.Repository.UsuarioRepository;
 import poxetofinances.com.example.poxetofinances.modelEntity.Usuario;
+import poxetofinances.com.example.poxetofinances.service.UsuarioService;
 
 
 @Service 

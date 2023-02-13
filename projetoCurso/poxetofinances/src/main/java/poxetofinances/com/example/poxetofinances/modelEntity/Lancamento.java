@@ -2,8 +2,6 @@ package poxetofinances.com.example.poxetofinances.modelEntity;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
-import java.util.Objects;
-
 import org.springframework.data.jpa.convert.threeten.Jsr310JpaConverters;
 
 import jakarta.persistence.Column;
@@ -25,7 +23,7 @@ import poxetofinances.com.example.poxetofinances.Enum.StatusLancamento;
 import poxetofinances.com.example.poxetofinances.Enum.TipoLancamento;
 
 @Entity
-@Table (name = "lancamento", schema = "finances")
+@Table (name = "lancamento", schema = "financas")
 @Getter
 @Setter
 @NoArgsConstructor

@@ -1,4 +1,4 @@
-package exception;
+package poxetofinances.com.example.poxetofinances.exception;
 
 
 public class RegraNegocioException extends RuntimeException{
