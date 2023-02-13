@@ -2,19 +2,21 @@ package model.Repository;
 
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
-import org.junit.runner.RunWith;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.ContextConfiguration;
-import org.springframework.test.context.junit4.SpringRunner;
+import org.springframework.test.context.junit.jupiter.SpringExtension;
 
 import poxetofinances.com.example.poxetofinances.PoxetofinancesApplication;
 import poxetofinances.com.example.poxetofinances.model.Repository.UsuarioRepository;
 import poxetofinances.com.example.poxetofinances.modelEntity.Usuario;
 
 @ContextConfiguration(classes = PoxetofinancesApplication.class)
-@RunWith(SpringRunner.class)
+@ExtendWith(SpringExtension.class)
 @SpringBootTest
+@ActiveProfiles("test")
 public class UsuarioRepositoryTeste {
 	
 	@Autowired
@@ -29,5 +31,14 @@ public class UsuarioRepositoryTeste {
 		boolean resultado = repository.existsByEmail("bia@email.com");
 		//verificacao
 		Assertions.assertThat(resultado).isTrue();
+	}
+	@Test
+	public void RetornaFalsoNaoExistemUsuariosNoBD() {
+		// cenario 
+		repository.deleteAll();
+		//acao/execução
+		boolean resultado = repository.existsByEmail("bia@email.com");
+		//verificacao
+		Assertions.assertThat(resultado).isFalse();
 	}
 }
