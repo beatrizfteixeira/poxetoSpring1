@@ -4,4 +4,7 @@ Spring Data
 Spring Security
 
 
-biblioteca project Lombok p/ evitar repetir código de getters e setters 
+biblioteca project Lombok p/ evitar repetir código de getters e setters
+testes:
+h2 database engine - > maven
+https://mvnrepository.com/artifact/com.h2database/h2/2.1.214
