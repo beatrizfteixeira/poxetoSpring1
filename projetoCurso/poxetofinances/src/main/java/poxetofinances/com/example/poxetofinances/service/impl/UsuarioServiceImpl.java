@@ -1,7 +1,12 @@
 package poxetofinances.com.example.poxetofinances.service.impl;
 
+
+import java.util.Optional;
+
 import org.springframework.stereotype.Service;
 
+import jakarta.transaction.Transactional;
+import poxetofinances.com.example.poxetofinances.exception.ErroAutenticacaoException;
 import poxetofinances.com.example.poxetofinances.exception.RegraNegocioException;
 import poxetofinances.com.example.poxetofinances.model.Repository.UsuarioRepository;
 import poxetofinances.com.example.poxetofinances.modelEntity.Usuario;
@@ -16,18 +21,28 @@ public class UsuarioServiceImpl implements UsuarioService{
 		super();
 		this.repository = repository;
 	}
+	@Override
+	public Optional<Usuario> autenticar(String email, String senha) {
+		Optional<Usuario> usuario = repository.findByEmail(email);
+		if (!usuario.isPresent()) {
+			throw new ErroAutenticacaoException("Email ainda não cadastrado.");
+		}
+		if (!usuario.get().getSenha().equals(senha)) {
+			throw new ErroAutenticacaoException("Senha inválida");
+		}
+		return usuario; // ou usuario.get() ??? questoes
+	}
 	
-	public Usuario autenticar(String email, String senha) {
+	@Override
+	@Transactional
+	public Usuario cadastrarUsuario(Usuario usuario) { // salvar usuario
+
+		validarEmail(usuario.getEmail());
 		
-		// TODO Auto-generated method stub
-		return null;
+		return repository.save(usuario);		
+		
 	}
-
-	public Usuario cadastrarUsuario(Usuario usuario) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
+	@Override
 	public void validarEmail(String email) {
 		boolean existe = repository.existsByEmail(email);
 		if (existe) {

@@ -1,10 +1,12 @@
 package poxetofinances.com.example.poxetofinances.service;
 
+import java.util.Optional;
+
 import poxetofinances.com.example.poxetofinances.modelEntity.Usuario;
 
 public interface UsuarioService {
 
-	Usuario autenticar(String email, String senha);
+	Optional<Usuario> autenticar(String email, String senha);
 	
 	Usuario cadastrarUsuario(Usuario usuario);
 	
