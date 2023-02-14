@@ -2,6 +2,7 @@ package poxetofinances.com.example.poxetofinances.modelEntity;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
+
 import org.springframework.data.jpa.convert.threeten.Jsr310JpaConverters;
 
 import jakarta.persistence.Column;
@@ -16,6 +17,7 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
+import lombok.Data;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -28,6 +30,7 @@ import poxetofinances.com.example.poxetofinances.Enum.TipoLancamento;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
+@Data
 public class Lancamento {
 	@Id
 	@Column (name = "id")

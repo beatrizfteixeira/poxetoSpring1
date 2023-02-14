@@ -7,10 +7,8 @@ import poxetofinances.com.example.poxetofinances.model.Repository.UsuarioReposit
 import poxetofinances.com.example.poxetofinances.modelEntity.Usuario;
 import poxetofinances.com.example.poxetofinances.service.UsuarioService;
 
-
 @Service 
 public class UsuarioServiceImpl implements UsuarioService{
-	
 	
 	private UsuarioRepository repository;
 	
